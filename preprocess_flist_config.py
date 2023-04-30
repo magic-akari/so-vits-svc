@@ -65,8 +65,8 @@ if __name__ == "__main__":
             wavs.append(file_path)
 
         shuffle(wavs)
-        train += wavs[2:]
-        val += wavs[:2]
+        train += wavs[4:]
+        val += wavs[:4]
 
     shuffle(train)
     shuffle(val)

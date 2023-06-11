@@ -400,7 +400,7 @@ python train_index.py -c configs/config.json
   + `inference_main.py`中指定`cluster_model_path` 为模型输出文件, 留空则默认为`logs/44k/feature_and_index.pkl`
   + `inference_main.py`中指定`cluster_infer_ratio`，`0`为完全不使用特征检索，`1`为只使用特征检索，通常设置`0.5`即可
 
-### [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/svc-develop-team/so-vits-svc/blob/4.1-Stable/sovits4_for_colab.ipynb) [sovits4_for_colab.ipynb](https://colab.research.google.com/github/svc-develop-team/so-vits-svc/blob/4.1-Stable/sovits4_for_colab.ipynb)
+### [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/magic-akari/so-vits-svc/blob/4.1-akari/sovits4_for_colab.ipynb) [sovits4_for_colab.ipynb](https://colab.research.google.com/github/magic-akari/so-vits-svc/blob/4.1-akari/sovits4_for_colab.ipynb)
 
 ## 🗜️ 模型压缩
 

@@ -5,4 +5,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: ${{ github.event_name == 'pull_request' && 2 || 0 }}
+
+      - name: Get changed files
+        id: changed-files
+        run: |
+          if ${{ github.event_name == 'pull_request' }}; then
+              echo "changed_files=$(git diff --name-only $CI_MERGE_REQUEST_DIFF_BASE_SHA -- '*.py' | xargs)" >> $GITHUB_OUTPUT
+          else
+              echo "changed_files=$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }} -- '*.py' | xargs)" >> $GITHUB_OUTPUT
+          fi
       - uses: chartboost/ruff-action@v1
+        if: ${{ steps.changed-files.outputs.changed_files }}
+        with:
+          src: ${{ steps.changed-files.outputs.changed_files }}

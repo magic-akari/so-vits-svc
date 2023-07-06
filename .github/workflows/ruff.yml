@@ -6,3 +6,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: chartboost/ruff-action@v1
+        with:
+          src: ${{ git diff --name-only $CI_MERGE_REQUEST_DIFF_BASE_SHA -- '*.py' }}
+

@@ -6,7 +6,8 @@ import time
 import torch
 import torch.distributed as dist
 import torch.multiprocessing as mp
-from torch.cuda.amp import GradScaler, autocast
+from torch.cuda.amp import GradScaler
+from torch.cuda.amp import autocast
 from torch.nn import functional as F
 from torch.nn.parallel import DistributedDataParallel as DDP
 from torch.utils.data import DataLoader
